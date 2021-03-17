@@ -1,0 +1,60 @@
+<%- include('../includes/head.ejs') %>
+<%- include('../includes/navigation.ejs') %>
+<%- include('../includes/page-header.ejs') %>
+        <div class="container">
+            <div class="row" style="margin-top: 100px;">
+                <div class="col-1"></div>
+                <div class="col-5" style="text-align: center; margin-top: 50px;">
+                    <span>
+                        <h4 class="text-primary sum-title">Sort Statistics:</h4>
+                        <h6 class="text-secondary">Array Length: <%= length %></h6>
+                        <h6 class="array__time text-secondary">Time: <%= time %>s</h6>
+                    </span>
+                </div>
+                <% if (path === '/sortBubble') { %>
+                    <div class="col-6 code-block">
+                        <code style="white-space: pre;">bubbleSort = (arr, length) {
+    let temp;
+
+    for (let i = 0; i < length - 1; i++) {
+        for (let j = 0; j < length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = arr[j];
+            }
+        }
+    }
+    return arr;
+}</code>
+                    </div>
+                <% } %>
+                <% if (path === '/sortDefault') { %>
+                    <div class="col-6 code-block">
+                        <code style="white-space: pre;">defaultSort = (arr) => {
+    arr.sort((a, b) => {
+        if (a > b) return 1;
+        if (a === b) return 0;
+        if (a < b) return -1;
+    });
+    return arr;
+}</code>
+                    </div>
+                <% } %>
+            </div>
+            <!-- <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <p>Before Sort <%= input %></p>
+                    <p>After Sort: <%= output %></p>
+                </div>
+            </div> -->
+            <!-- <div class="row">
+                <div class="col-5">
+                    <% output.forEach(function(output){ %>
+                        <p><%= output %></p>
+                    <% }) %>
+                </div>
+            </div> -->
+        </div>
+<%- include('../includes/end.ejs') %>

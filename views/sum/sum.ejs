@@ -1,0 +1,71 @@
+<%- include('../includes/head.ejs') %>
+<%- include('../includes/navigation.ejs') %>
+<%- include('../includes/page-header.ejs') %>
+<main>
+    <div class="container" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-5">
+                <h4 class="text-primary sum-title">ForEach Method</h4>
+                <div style="margin-top: 40px; text-align: center;">
+                    <h6 class="text-secondary">Array Length: <%= length %></h6>
+                    <h6 class="text-secondary">Result: <%= outputA.value %></h6>
+                    <h6 class="text-secondary">Time: <%= timeA %>s</h6>
+                </div>
+            </div>
+            <div class="col-4">
+                <div style="margin-left: 50px; text-align: left;" class="code-block">
+                    <code style="white-space: pre;">sumA = (arr) => {
+    let output = 0;
+    arr.forEach(item => {
+        output += item;
+    });
+    return output;
+}</code>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 35px;">
+            <div class="col-1"></div>
+            <div class="col-5">
+                <h4 class="text-primary sum-title">Reduce Method</h4>
+                <div style="margin-top: 40px; text-align: center;">
+                    <h6 class="text-secondary">Array Length: <%= length %></h6>
+                    <h6 class="text-secondary">Result: <%= outputB.value %></h6>
+                    <h6 class="text-secondary">Time: <%= timeB %>s</h6>
+                </div>
+            </div>
+            <div class="col-4">
+                <div style="margin-left: 50px; margin-top: 30px; text-align: left;" class="code-block">
+                    <code style="white-space: pre;">sumB = (arr) => {
+    let output = 0;
+    return output = arr.reduce((a, b) => a + b);
+}</code>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 45px;">
+            <div class="col-1"></div>
+            <div class="col-5">
+                <h4 class="text-primary sum-title">Iteration Method</h4>
+                <div style="margin-top: 40px; text-align: center;">
+                    <h6 class="text-secondary">Array Length: <%= length %></h6>
+                    <h6 class="text-secondary">Result: <%= outputC.value %></h6>
+                    <h6 class="text-secondary">Time: <%= timeC %>s</h6>
+                </div>
+            </div>
+            <div class="col-4">
+                <div style="margin-left: 50px; text-align: left; margin-bottom: 35px;" class="code-block">
+                    <code style="white-space: pre;">sumC = (arr) => {
+    let output = 0;
+    for (let i = 0; i < arr.length; i++) {
+        output += arr[i];
+    }
+    return output;
+}</code>
+                </div>
+            </div>
+        </div>
+    </div>   
+</main>
+<%- include('../includes/end.ejs') %>

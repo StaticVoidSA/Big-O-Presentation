@@ -1,0 +1,66 @@
+<%- include('../includes/head.ejs') %>
+<%- include('../includes/navigation.ejs') %>
+<%- include('../includes/page-header.ejs') %>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-4 max-values">
+                <!-- Max Values -->
+                <% if (method === 'POST') { %>
+                    <h3 class="text-primary" style="margin-bottom: 35px;">Max Values</h3>
+                    <h5 class="text-primary">ForEach Method</h5>
+                    <h6 class="text-secondary">Output: <%= forEachMax.value %></h6>
+                    <h6 class="text-secondary">Length: <%= forEachMax.length %></h6>
+                    <h6 class="text-secondary">Time: <%= forEachMax.time %>s</h6>
+                    <br />
+                    <h5 class="text-primary">Filter Method</h5>
+                    <h6 class="text-secondary">Output: <%= filterMax.value %></h6>
+                    <h6 class="text-secondary">Length: <%= filterMax.length %></h6>
+                    <h6 class="text-secondary">Time: <%= filterMax.time %>s</h6>
+                    <br />
+                    <h5 class="text-primary">Map Method</h5>
+                    <h6 class="text-secondary">Output: <%= mapMax.value %></h6>
+                    <h6 class="text-secondary">Length: <%= mapMax.length %></h6>
+                    <h6 class="text-secondary">Time: <%= mapMax.time %>s</h6>
+                <% } %>
+            </div>
+            <div class="col-4 min-max__input-area">
+                <form class="minmax-form" action="/min-max/postMinMax" method="POST">
+                    <h4 class="text-primary" style="text-align: center;">Please Enter Values</h4>
+                    <div class="values-form">
+                        <input class="form-control form-control-sm" type="text" id="a" name="a" required min="1" max="100">
+                        <input class="form-control form-control-sm" type="text" id="b" name="b" required min="1" max="100">
+                        <input class="form-control form-control-sm" type="text" id="c" name="c" required min="1" max="100">
+                        <input class="form-control form-control-sm" type="text" id="d" name="d" required min="1" max="100">
+                        <input class="form-control form-control-sm" type="text" id="e" name="e" required min="1" max="100">
+                        <input class="form-control form-control-sm" type="text" id="e" name="f" required min="1" max="100">
+                        <input class="form-control form-control-sm" type="text" id="e" name="g" required min="1" max="100">
+                        <input class="form-control form-control-sm" type="text" id="e" name="h" required min="1" max="100">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Check</button>
+                </form>
+            </div>
+            <div class="col-4 max-values">
+                <!-- Min Values -->
+                <% if (method === 'POST') { %>
+                    <h3 class="text-primary" style="margin-bottom: 35px;">Min Values</h3>
+                    <h5 class="text-primary" style="margin-top: 35px;">ForEach Method</h5>
+                    <h6 class="text-secondary">Output: <%= forEachMin.value %></h6>
+                    <h6 class="text-secondary">Length: <%= forEachMin.length %></h6>
+                    <h6 class="text-secondary">Time: <%= forEachMin.time %>s</h6>
+                    <br />
+                    <h5 class="text-primary">Filter Method</h5>
+                    <h6 class="text-secondary">Output: <%= filterMin.value %></h6>
+                    <h6 class="text-secondary">Length: <%= filterMin.length %></h6>
+                    <h6 class="text-secondary">Time: <%= filterMin.time %>s</h6>
+                    <br />
+                    <h5 class="text-primary">Map Method</h5>
+                    <h6 class="text-secondary">Output: <%= mapMin.value %></h6>
+                    <h6 class="text-secondary">Length: <%= mapMin.length %></h6>
+                    <h6 class="text-secondary">Time: <%= mapMin.time %>s</h6>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</main>
+<%- include('../includes/end.ejs'); %>

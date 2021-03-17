@@ -1,0 +1,183 @@
+* {
+    font-family: sans-serif;
+}
+
+.array__length, .array__time, .array__items {
+    font-family: sans-serif;
+    color: rgb(71, 71, 238);
+}
+
+.details__container {
+    border: 0.1rem solid #919090;
+    border-radius: 10px;
+    box-shadow: 4px 4px #dddbdb;
+    padding: 30px 20px;
+    height: auto;
+    margin-top: 70px;
+}
+
+.main-header {
+    width: 120%;
+    height: 3rem;
+    background-color: #1388e7;
+    display: flex;
+    align-items: center;
+    margin-top: -10px;
+    margin-left: -10px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.main-header__nav {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.main-header__item-list {
+    list-style: none;
+    margin: 0;
+    padding: 12px;
+    display: flex;
+}
+
+.main-header__item {
+    margin: 0 1rem;
+    padding: 0;
+}
+
+.main-header__item a {
+    text-decoration: none;
+    color: white;
+    vertical-align: sub;
+}
+
+.main-header__item a:active,
+.main-header__item a:hover,
+.main-header__item a.active {
+    color: #b4e1ff;
+}
+
+#main-input {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.user-input {
+    width: 50px;
+    border: 1px solid #575757;
+    box-shadow: 4px 4px #dddbdb;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.user-input:focus {
+    outline: none;
+    border: none;
+}
+
+.array__items {
+    width: 80%;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+
+.submit-form {
+    display: inline-block;
+}
+
+.heading-fibonacci {
+    margin: 25px 10px;
+}
+
+.big-o__image {
+    margin-top: 30px;
+    text-align: center;
+    width: 600px;
+    height: 400px;
+}
+
+.complexities__title {
+    margin-top: 30px;
+    text-align: left;
+    margin-left: 40px;
+}
+
+.list__items {
+    margin-top: 35px;
+    text-align: left;
+    list-style: none;
+}
+
+.big-o__title {
+    text-align: center;
+    margin-left: 450px;
+}
+
+.complexities__container {
+    margin-top: 35px;
+}
+
+.complexity-details__container {
+    margin-top: 50px;
+    margin-left: 0px;
+}
+
+.example-title {
+    text-decoration: underline;
+}
+
+.final-notes {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    border: 1px solid #c2c0c0;
+    border-radius: 12px;
+    box-shadow: 4px 4px #c2c1c1;
+    padding: 10px;
+}
+
+a {
+    scroll-behavior: smooth;
+}
+
+.sum-title {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.code-block {
+    border: 0.001rem solid #c2c0c0;
+    padding: 15px;
+    width: 450px;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 12px;
+    box-shadow: 3px 3px #919090;
+}
+
+.min-max__input-area {
+    text-align: inherit;
+    margin-top: 35px;
+    width: 100%;
+}
+
+.values-form {
+    width: 100%;
+    display: inline-flexbox;
+    padding: 5px;
+}
+
+.values-form input {
+    margin: 20px 0px;
+}
+
+.minmax-form {
+    text-align: center;
+}
+
+.max-values, .minvalues {
+    text-align: center;
+}

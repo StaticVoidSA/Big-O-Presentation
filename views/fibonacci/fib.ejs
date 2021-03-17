@@ -1,0 +1,59 @@
+<%- include('../includes/head.ejs') %>
+<%- include('../includes/navigation.ejs') %>
+<%- include('../includes/page-header.ejs') %>
+        <div class="container">
+            <div id="main-input" class="row">
+                <div class="col-1"></div>
+                <div class="col-2">
+                    <form class="submit-form" action="<%= path === '/exponential' ? '/fibonacci/exponential' : '/fibonacci/polynomial' %>" method="POST">
+                        <h5 class="heading-fibonacci text-primary">Input:</h5>
+                        <input class="user-input form-control" type="number" name="length" max="1500" min="3" value="" required><br />
+                        <button class="btn btn-primary" type="submit">Check</button>
+                    </form>
+                </div>
+                <div class="col-2">
+                    <h5 class="heading-fibonacci text-primary">Output:</h5>
+                    <% if (method === 'POST') { %>
+                        <div class="output-container">
+                            <p class="text-secondary">Result: <%= output.result %></p>
+                            <p class="text-secondary">Time: <%= time %>s</p>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-4 code-block" style="text-align: left; margin-top: 35px;">
+                    <% if (path === '/exponential') { %>
+                        <code style="white-space: pre;">exponential = (length) => {
+    let a = 0;
+    let b = 1;
+    let c = 0;
+    
+    for (let i = 2; i < length; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+    }
+
+    return c;
+}
+                        </code>
+                    <% } %>
+                    <% if (path === '/polynomial') { %>
+                        <code style="white-space: pre;">polynomial = (length) => {
+    let arr = [];
+    arr[0] = 0;
+    arr[1] = 1;
+    
+    for (let i = 2; i < length; i++) {
+        arr[i] = arr[i - 1] + arr[i - 2];
+    }
+
+    return arr[length - 1];
+}</code>
+                    <% } %>
+                </div>
+                <div class="col-1"></div>
+                
+            </div>
+        </div>
+<%- include('../includes/end.ejs') %>
