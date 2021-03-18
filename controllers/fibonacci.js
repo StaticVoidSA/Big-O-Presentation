@@ -24,10 +24,9 @@ exports.postExponential = (req, res) => {
     const result = fib.exponential(length);
     const stopTime = performance.now();
     
-    const output = { result: result, length: length };
-    const time = (stopTime - startTime).toFixed(4);
+    const output = { result: result, length: length, time: (stopTime - startTime).toFixed(4) };
 
-    fsObj.writeData(`Fibonacci Exponential - Length: ${length}`, time, _path);
+    fsObj.writeData(`Fibonacci Exponential - Length: ${length}`, output.time, _path);
 
     res.status(200).render('./fibonacci/fib', {
         pageTitle: 'Fibonacci Exponential',
@@ -35,7 +34,7 @@ exports.postExponential = (req, res) => {
         statusCode: 200,
         output: output,
         method: req.method,
-        time: time
+        time: output.time
     });
 }
 
@@ -59,10 +58,9 @@ exports.postPolynomial = (req, res) => {
     const result = fib.polynomial(length);
     const stopTime = performance.now();
     
-    const output = { result: result, length: length };
-    const time = (stopTime - startTime).toFixed(4);
+    const output = { result: result, length: length, time: (stopTime - startTime).toFixed(4) };
 
-    fsObj.writeData(`Fibonacci Polynomial - Length: ${length}`, time, _path);
+    fsObj.writeData(`Fibonacci Polynomial - Length: ${length}`, output.time, _path);
 
     res.status(200).render('./fibonacci/fib', {
         pageTitle: 'Fibonacci Polynomial',
@@ -70,6 +68,6 @@ exports.postPolynomial = (req, res) => {
         statusCode: 200,
         output: output,
         method: req.method,
-        time: time
+        time: output.time
     });
 }
