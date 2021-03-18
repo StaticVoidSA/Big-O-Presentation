@@ -181,3 +181,17 @@ a {
 .max-values, .minvalues {
     text-align: center;
 }
+
+.method__container  {
+    text-align: left;
+    margin-top: 35px;
+}
+
+.method__output {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.search__main-container {
+    margin-top: 35px;
+}

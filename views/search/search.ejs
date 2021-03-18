@@ -4,23 +4,49 @@
 <main>
     <section class="search__main-container">
         <div class="row">
-            <div class="find-method__container">
-                
+            <div class="col-3"></div>
+            <div class="col-4">
+                <div class="method__container">
+                    <h5 class="text-primary"><%= findOutput.type %></h5>
+                    <div class="method__output">
+                        <p class="text-secondary">Length: <%= findOutput.length %></p>
+                        <p class="text-secondary">Time: <%= findOutput.time %>s</p>
+                        <p class="text-secondary">Output: <%= findOutput.output %></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="method__container">
+                    <h5 class="text-primary"><%= filterOutput.type %></h5>
+                    <div class="method__output">
+                        <p class="text-secondary">Length: <%= filterOutput.length %></p>
+                        <p class="text-secondary">Time: <%= filterOutput.time %>s</p>
+                        <p class="text-secondary">Output: <%= filterOutput.output %></p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="filter-method__container">
-    
+            <div class="col-3"></div>
+            <div class="col-4">
+                <div class="method__container">
+                    <h5 class="text-primary"><%= forEachOutput.type %></h5>
+                    <div class="method__output">
+                        <p class="text-secondary">Length: <%= forEachOutput.length %></p>
+                        <p class="text-secondary">Time: <%= forEachOutput.time %>s</p>
+                        <p class="text-secondary">Output: <%= forEachOutput.output %></p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="forEach-method__container">
-    
-            </div>
-        </div>
-        <div class="row">
-            <div class="for-method__container">
-                
+            <div class="col-4">
+                <div class="method__container">
+                    <h5 class="text-primary"><%= forOutput.type %></h5>
+                    <div class="method__output">
+                        <p class="text-secondary">Length: <%= forOutput.length %></p>
+                        <p class="text-secondary">Time: <%= forOutput.time %>s</p>
+                        <p class="text-secondary">Output: <%= forOutput.output %></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

@@ -4,18 +4,19 @@ const fsObj = require('../util/filesystem');
 const path = require('path');
 const _path = path.join(path.dirname(process.mainModule.filename), 'data', 'find.txt');
 
-exports.findMethod = (arr) => {
+exports.findMethod = (arr, input) => {
     const findStartTime = performance.now();
-    const outputFind = Search.findMethod(arr, 'Shannon');
+    const outputFind = Search.findMethod(arr, input);
     const findStopTime = performance.now();
 
     const output = {
-        findTime: (findStopTime - findStartTime).toFixed(4),
+        time: (findStopTime - findStartTime).toFixed(4),
         output: outputFind,
-        type: "Find Method"
+        type: "Find Method",
+        length: arr.length
     }
 
-    fsObj.writeData(`Method Find;Length: ${arr.length};Output: ${output.output}`, output.findTime, _path);
+    fsObj.writeData(`Method Find;Length: ${output.length};Output: ${output.output}`, output.findTime, _path);
     return output;
 }
 
@@ -25,41 +26,44 @@ exports.filterMethod = (arr, input) => {
     const filterStopTime = performance.now();
 
     const output = {
-        filterTime: (filterStopTime - filterStartTime).toFixed(4),
+        time: (filterStopTime - filterStartTime).toFixed(4),
         output: outputFilter,
-        type: "Filter Method"
+        type: "Filter Method",
+        length: arr.length
     }
 
-    fsObj.writeData(`Method Filter;Length: ${arr.length};Output: ${output.output}`, output.filterTime, _path);
+    fsObj.writeData(`Method Filter;Length: ${output.length};Output: ${output.output}`, output.filterTime, _path);
     return output;
 }
 
-exports.forEachMethod = (arr) => {
+exports.forEachMethod = (arr, input) => {
     const forEachStartTime = performance.now();
-    const outputForEach = Search.forEachMethod(arr, 'Shannon');
+    const outputForEach = Search.forEachMethod(arr, input);
     const forEachStopTime = performance.now();
 
     const output = {
-        forEachTime: (forEachStopTime - forEachStartTime).toFixed(4),
+        time: (forEachStopTime - forEachStartTime).toFixed(4),
         output: outputForEach,
-        type: "ForEach Method"
+        type: "ForEach Method",
+        length: arr.length
     }
 
-    fsObj.writeData(`Method ForEach;Length: ${arr.length};Output: ${output.output}`, output.forEachTime, _path);
+    fsObj.writeData(`Method ForEach;Length: ${output.length};Output: ${output.output}`, output.forEachTime, _path);
     return output;
 }
 
-exports.forMethod = (arr) => {
+exports.forMethod = (arr, input) => {
     const forStartTime = performance.now();
-    const outputFor = Search.forMethod(arr, 'Shannon');
+    const outputFor = Search.forMethod(arr, input);
     const forStopTime = performance.now();
 
     const output = {
-        forTime: (forStopTime - forStartTime).toFixed(4),
+        time: (forStopTime - forStartTime).toFixed(4),
         output: outputFor,
-        type: "For Method"
+        type: "For Method",
+        length: arr.length
     }
 
-    fsObj.writeData(`Method For;Length: ${arr.length};Output: ${output.output}`, output.forTime, _path);
+    fsObj.writeData(`Method For;Length: ${output.length};Output: ${output.output}`, output.forTime, _path);
     return output;
 }
