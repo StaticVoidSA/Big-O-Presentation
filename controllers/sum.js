@@ -7,20 +7,23 @@ const arr = [9023, 345, 67567, 344, 3345, 2333, 76445, 3454, 4545, 2343, 65656, 
     45456, 767, 7888, 67867, 456, 345, 333455];
 
 exports.getSums = (req, res) => {
+    try {
+        const outputForEach = sumA(arr);
+        const outputFilter = sumB(arr);    
+        const outputMap = sumC(arr);
     
-    const outputForEach = sumA(arr);
-    const outputFilter = sumB(arr);    
-    const outputMap = sumC(arr);
-    
-    res.status(200).render('./sum/sum', {
-       pageTitle: 'Total Sums',
-       path: '/sums',
-       timeA: outputForEach.time,
-       outputA: outputForEach, 
-       timeB: outputFilter.time,
-       outputB: outputFilter,
-       timeC: outputMap.time,
-       outputC: outputMap,
-       length: arr.length
-    });
+        res.status(200).render('./sum/sum', {
+            pageTitle: 'Total Sums',
+            path: '/sums',
+            timeA: outputForEach.time,
+            outputA: outputForEach, 
+            timeB: outputFilter.time,
+            outputB: outputFilter,
+            timeC: outputMap.time,
+            outputC: outputMap,
+            length: arr.length
+        });
+    } catch (error) {
+        console.log(error);
+    }
 }

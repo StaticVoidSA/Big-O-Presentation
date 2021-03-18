@@ -32,23 +32,27 @@ exports.postMinMax = (req, res) => {
         arr[7] = req.body.h;
     }
 
-    const outputForEachMax = getMaxForEach(arr);
-    const outputFilterMax = getMaxFilter(arr);
-    const outputMapMax = getMaxMap(arr);
+    try {
+        const outputForEachMax = getMaxForEach(arr);
+        const outputFilterMax = getMaxFilter(arr);
+        const outputMapMax = getMaxMap(arr);
 
-    const outputForEachMin = getMinForEach(arr);
-    const outputFilterMin = getMinFilter(arr);
-    const outputMapMin = getMinMap(arr);
+        const outputForEachMin = getMinForEach(arr);
+        const outputFilterMin = getMinFilter(arr);
+        const outputMapMin = getMinMap(arr);
 
-    res.status(200).render('./min-max/min-max', {
-        pageTitle: 'Min-Max Values',
-        path: '/min-max',
-        method: req.method,
-        forEachMax: outputForEachMax,
-        filterMax: outputFilterMax,
-        mapMax: outputMapMax,
-        forEachMin: outputForEachMin,
-        filterMin: outputFilterMin,
-        mapMin: outputMapMin
-    });
+        res.status(200).render('./min-max/min-max', {
+            pageTitle: 'Min-Max Values',
+            path: '/min-max',
+            method: req.method,
+            forEachMax: outputForEachMax,
+            filterMax: outputFilterMax,
+            mapMax: outputMapMax,
+            forEachMin: outputForEachMin,
+            filterMin: outputFilterMin,
+            mapMin: outputMapMin
+        });
+    } catch (error) {
+        console.log(error);
+    }
 }

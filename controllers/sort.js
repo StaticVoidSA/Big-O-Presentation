@@ -13,37 +13,45 @@ const arr = [
     "(", ")", "-", "+", "'", "\\", "/", "}", "{", ",", ".", "<", ">", "|", "="];
 
 exports.bubbleSort = (req, res) => {
-    const startTime = performance.now();
-    const output = sort.bubbleSort(arr, arr.length);
-    const stopTime = performance.now();
-    const time = (stopTime - startTime).toFixed(4);
+    try {
+        const startTime = performance.now();
+        const output = sort.bubbleSort(arr, arr.length);
+        const stopTime = performance.now();
+        const time = (stopTime - startTime).toFixed(4);
 
-    fsObj.writeData('Bubble Sort', time, _path);
+        fsObj.writeData('Bubble Sort', time, _path);
 
-    res.status(200).render('./sorting/sort', {
-        pageTitle: 'Bubble Sort',
-        length: arr.length,
-        time: time,
-        output: output,
-        input: arr,
-        path: '/sortBubble'
-    });
+        res.status(200).render('./sorting/sort', {
+            pageTitle: 'Bubble Sort',
+            length: arr.length,
+            time: time,
+            output: output,
+            input: arr,
+            path: '/sortBubble'
+        });
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 exports.defaultSort = (req, res) => {
-    const startTime = performance.now();
-    const output = sort.defaultSort(arr, arr.length);
-    const stopTime = performance.now();
-    const time = (stopTime - startTime).toFixed(4);
+    try {
+        const startTime = performance.now();
+        const output = sort.defaultSort(arr, arr.length);
+        const stopTime = performance.now();
+        const time = (stopTime - startTime).toFixed(4);
 
-    fsObj.writeData('Default Sort', (stopTime - startTime).toFixed(4), _path);
+        fsObj.writeData('Default Sort', (stopTime - startTime).toFixed(4), _path);
 
-    res.status(200).render('./sorting/sort', {
-        pageTitle: 'Default Sort',
-        length: arr.length,
-        time: time,
-        output: Array.from(output),
-        input: arr,
-        path: '/sortDefault'
-    });
+        res.status(200).render('./sorting/sort', {
+            pageTitle: 'Default Sort',
+            length: arr.length,
+            time: time,
+            output: Array.from(output),
+            input: arr,
+            path: '/sortDefault'
+        });
+    } catch (error) {
+        console.log(error);
+    }
 }
