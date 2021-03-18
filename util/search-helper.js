@@ -11,11 +11,11 @@ exports.findMethod = (arr) => {
 
     const output = {
         findTime: (findStopTime - findStartTime).toFixed(4),
-        findOutput: outputFind,
+        output: outputFind,
         type: "Find Method"
     }
 
-    fsObj.writeData(`Method Find;Length: ${arr.length};Output: ${output.findOutput}`, output.findTime, _path);
+    fsObj.writeData(`Method Find;Length: ${arr.length};Output: ${output.output}`, output.findTime, _path);
     return output;
 }
 
@@ -26,11 +26,11 @@ exports.filterMethod = (arr, input) => {
 
     const output = {
         filterTime: (filterStopTime - filterStartTime).toFixed(4),
-        filterOutput: outputFilter,
+        output: outputFilter,
         type: "Filter Method"
     }
 
-    fsObj.writeData(`Method Filter;Length: ${arr.length};Output: ${output.filterOutput}`, output.filterTime, _path);
+    fsObj.writeData(`Method Filter;Length: ${arr.length};Output: ${output.output}`, output.filterTime, _path);
     return output;
 }
 
@@ -41,11 +41,11 @@ exports.forEachMethod = (arr) => {
 
     const output = {
         forEachTime: (forEachStopTime - forEachStartTime).toFixed(4),
-        forEachOutput: outputForEach,
+        output: outputForEach,
         type: "ForEach Method"
     }
 
-    fsObj.writeData(`Method ForEach;Length: ${arr.length};Output: ${output.forEachOutput}`, output.forEachTime, _path);
+    fsObj.writeData(`Method ForEach;Length: ${arr.length};Output: ${output.output}`, output.forEachTime, _path);
     return output;
 }
 
@@ -56,10 +56,10 @@ exports.forMethod = (arr) => {
 
     const output = {
         forTime: (forStopTime - forStartTime).toFixed(4),
-        forOutput: outputFor,
+        output: outputFor,
         type: "For Method"
     }
 
-    fsObj.writeData(`Method For;Length: ${arr.length};Output: ${output.forOutput}`, output.forTime, _path);
+    fsObj.writeData(`Method For;Length: ${arr.length};Output: ${output.output}`, output.forTime, _path);
     return output;
 }
