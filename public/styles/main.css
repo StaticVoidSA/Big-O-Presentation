@@ -2,7 +2,9 @@
     font-family: sans-serif;
 }
 
-.array__length, .array__time, .array__items {
+.array__length,
+.array__time,
+.array__items {
     font-family: sans-serif;
     color: rgb(71, 71, 238);
 }
@@ -55,8 +57,7 @@
 }
 
 .main-header__item a:active,
-.main-header__item a:hover,
-.main-header__item a.active {
+.main-header__item a:hover {
     color: #b4e1ff;
 }
 
@@ -178,11 +179,12 @@ a {
     text-align: center;
 }
 
-.max-values, .minvalues {
+.max-values,
+.minvalues {
     text-align: center;
 }
 
-.method__container  {
+.method__container {
     text-align: left;
     margin-top: 35px;
 }
