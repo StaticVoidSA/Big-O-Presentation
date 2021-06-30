@@ -7,7 +7,7 @@ exports.FindMin = class {
      */
     static find = (arr) => {
         if (!arr || arr.length <= 0) { throw new Error('Array must have atleast two values'); }
-        if (arr === 1) { return arr[0]; }
+        if (arr.length === 1) { return arr[0]; }
 
         let min = arr[0];
         arr.forEach(item => {
@@ -24,7 +24,7 @@ exports.FindMin = class {
      */
      static findMinFilter = (arr) => {
         if (!arr || arr.length <= 0) { throw new Error('Array must have atleast two values'); }
-        if (arr === 1) { return arr[0]; }
+        if (arr.length === 1) { return arr[0]; }
 
         let min = arr[0];
         arr.filter(item => {
@@ -41,7 +41,7 @@ exports.FindMin = class {
      */
     static findMinMap = (arr) => {
         if (!arr || arr.length <= 0) { throw new Error('Array must have atleast two values'); }
-        if (arr === 1) { return arr[0]; }
+        if (arr.length === 1) { return arr[0]; }
         
         let min = arr[0];
         arr.map(item => {
