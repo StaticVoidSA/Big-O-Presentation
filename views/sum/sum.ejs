@@ -15,7 +15,7 @@
             </div>
             <div class="col-4">
                 <div style="margin-left: 50px; text-align: left;" class="code-block">
-                    <code style="white-space: pre;">sumA = (arr) => {
+                    <code style="white-space: pre;">function ForEach = (arr) => {
     let output = 0;
     arr.forEach(item => {
         output += item;
@@ -37,7 +37,7 @@
             </div>
             <div class="col-4">
                 <div style="margin-left: 50px; margin-top: 30px; text-align: left;" class="code-block">
-                    <code style="white-space: pre;">sumB = (arr) => {
+                    <code style="white-space: pre;">function ReduceMethod = (arr) => {
     let output = 0;
     return output = arr.reduce((a, b) => a + b);
 }</code>
@@ -56,11 +56,38 @@
             </div>
             <div class="col-4">
                 <div style="margin-left: 50px; text-align: left; margin-bottom: 35px;" class="code-block">
-                    <code style="white-space: pre;">sumC = (arr) => {
+                    <code style="white-space: pre;">function BasicIteration = (arr) => {
     let output = 0;
     for (let i = 0; i < arr.length; i++) {
         output += arr[i];
     }
+    return output;
+}</code>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 45px;">
+            <div class="col-1"></div>
+            <div class="col-5">
+                <h4 class="text-primary sum-title">Recursive Method</h4>
+                <div style="margin-top: 40px; text-align: center;">
+                    <h6 class="text-secondary">Array Length: <%= length %></h6>
+                    <h6 class="text-secondary">Result: <%= outputD.value %></h6>
+                    <h6 class="text-secondary">Time: <%= timeD %>s</h6>
+                </div>
+            </div>
+            <div class="col-4">
+                <div style="margin-left: 50px; text-align: left; margin-bottom: 35px;" class="code-block">
+                    <code style="white-space: pre;">function RecursiveMethod = (arr) => {
+    let output = 0;
+
+    function helper(arr) {
+        if (arr.length === 0) return;
+        output += arr[0];
+        helper(arr.slice(1));
+    }
+
+    helper(arr);
     return output;
 }</code>
                 </div>

@@ -46,4 +46,26 @@ exports.SumArray = class {
         }
         return output;
     }
+
+    /**
+     * 
+     * Recursive Function that gathers total sum of all array items
+     * @param {number[]} arr 
+     * @returns {number}
+     */
+    static getSumD = (arr) => {
+        if (arr.length <= 0 || !arr) { throw new Error('Array length must be greater than 0'); }
+        if (arr.length === 1) { return arr[0]; }
+
+        let output = 0;
+        
+        function helper(arr) {
+            if (arr.length === 0) return;
+            output += +arr[0];
+            helper(arr.slice(1));
+        }
+
+        helper(arr);
+        return output;
+    }
 }

@@ -30,3 +30,12 @@ exports.sumC = (arr) => {
     fsObj.writeData(`Sum C: Iteration Method - Time: ${timeC}`, `Total: ${outputMap}`, _path);
     return { value: outputMap, time: timeC, length: arr.length };
 }
+
+exports.sumD = (arr) => {
+    const startTimeRecursive = performance.now();
+    const outputRecursive = SumArray.getSumD(arr);
+    const stopTimeRecursive = performance.now();
+    const timeD = (stopTimeRecursive - startTimeRecursive).toFixed(4);
+    fsObj.writeData(`Sum D: Recursive Method - Time: ${timeD}`, `Total: ${outputRecursive}`, _path);
+    return { value: outputRecursive, time: timeD, length: arr.length };
+}

@@ -15,7 +15,7 @@ const createArray = require('../util/generate_array');
 
 exports.bubbleSort = (req, res) => {
     try {
-        const arr = createArray.create(1500, 1, 1500);
+        const arr = createArray.create(2000, 1, 2000);
         const startTime = performance.now();
         const output = sort.bubbleSort(arr, arr.length);
         const stopTime = performance.now();
@@ -38,7 +38,7 @@ exports.bubbleSort = (req, res) => {
 
 exports.defaultSort = (req, res) => {
     try {
-        const arr = createArray.create(1500, 1, 1500);
+        const arr = createArray.create(2000, 1, 2000);
         const startTime = performance.now();
         const output = sort.defaultSort(arr, arr.length);
         const stopTime = performance.now();
@@ -61,7 +61,7 @@ exports.defaultSort = (req, res) => {
 
 exports.selectionSort = (req, res) => {
     try {
-        const arr = createArray.create(1500, 1, 1500);
+        const arr = createArray.create(2000, 1, 2000);
         const startTime = performance.now();
         const output = sort.selectionSort(arr);
         const stopTime = performance.now();
