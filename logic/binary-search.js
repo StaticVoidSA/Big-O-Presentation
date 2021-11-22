@@ -63,9 +63,37 @@ const indexOfBinarySearchNew = (arr, lhs, rhs, x) => {
     return -1;
 }
 
+
+/**
+ * 
+ * @param {*} arr 
+ * @param {*} value 
+ * @returns {number}
+ */
+const BinarySearch = (arr, value) => {
+    let lhs = 0;
+    let rhs = arr.length - 1;
+    let mid = Math.floor((lhs + rhs) / 2);
+
+    while(arr[mid] !== value && lhs <= rhs) {
+        if (value < arr[mid]) {
+            rhs = mid - 1;
+        } else {
+            lhs = mid + 1;
+        }
+
+        mid = Math.floor((lhs + rhs) / 2);
+    }
+
+    return arr[mid] === value ? mid : -1;
+}
+
+
+
 exports.indexOfBinarySearchNew = indexOfBinarySearchNew;
 exports.indexOfBinarySearch = indexOfBinarySearch;
 exports.getData = getData;
+exports.BinarySearch = BinarySearch;
 
 // NOTE:
 // The idea of a binary search is to use the information that

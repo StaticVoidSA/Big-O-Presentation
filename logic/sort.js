@@ -66,3 +66,27 @@ exports.quadraticSort = (arr, length) => {
     }
     return arr;
 }
+
+const swap = (arr, i, min) => {
+    let temp = arr[i];
+    arr[i] = arr[min];
+    arr[min] = temp;
+}
+
+exports.selectionSort = (arr, length = arr.length) => {
+    let noSwap = 0;
+    for (let i = 0; i < length; i++) {
+        let min = i;
+        noSwap++;
+        for (let j = i + 1; j < length; j++) {
+            if (arr[j] < arr[min]) {
+                min = j;
+                noSwap--;
+            }
+        }
+        if (noSwap > 1) break;
+        swap(arr, i, min);
+    }
+
+    return arr;
+}
