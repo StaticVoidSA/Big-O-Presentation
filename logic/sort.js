@@ -74,6 +74,8 @@ const swap = (arr, i, min) => {
 }
 
 exports.selectionSort = (arr, length = arr.length) => {
+    if (!arr || length <= 0) { throw new Error('Array must have atleast two values'); }
+
     let noSwap = 0;
     for (let i = 0; i < length; i++) {
         let min = i;
@@ -86,6 +88,23 @@ exports.selectionSort = (arr, length = arr.length) => {
         }
         if (noSwap > 1) break;
         swap(arr, i, min);
+    }
+
+    return arr;
+}
+
+
+exports.insertionSort = (arr, length = arr.length) => {
+    if (!arr || length <= 0) { throw new Error('Array must have atleast two values'); }
+
+    for (let i = 1; i < length; i++) {
+        let currentVal = arr[i];
+
+        for (var j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+            arr[j + 1] = arr[j];
+        }
+
+        arr[j + 1] = currentVal;
     }
 
     return arr;
