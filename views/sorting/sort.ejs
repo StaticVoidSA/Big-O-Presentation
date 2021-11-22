@@ -61,7 +61,26 @@
         arr[min] = temp;
     }
     return arr;
+}</code>
+    </div>
                 <% } %>    
+                <% if (path === '/insertionSort') { %>
+                    <div class="col-6 code-block">
+                        <code style="white-space: pre;">const insertionSort = (arr) => {
+    for (let i = 1; i < arr.length; i++) {
+        let currentVal = arr[i];
+
+        for (var j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+            arr[j + 1] = arr[j];
+        }
+
+        arr[j + 1] = currentVal;
+    }
+
+    return arr;
+} </code>   
+        </div>    
+            <% } %> 
             </div>
             <!-- <div class="row">
                 <div class="col-1"></div>

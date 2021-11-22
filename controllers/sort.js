@@ -81,3 +81,26 @@ exports.selectionSort = (req, res) => {
         console.log(error);
     }
 }
+
+exports.insertionSort = (req, res) => {
+    try {
+        const arr = createArray.create(2000, 1, 2000);
+        const startTime = performance.now();
+        const output = sort.insertionSort(arr);
+        const stopTime = performance.now();
+        const time = (stopTime - startTime).toFixed(4);
+
+        fsObj.writeData('Insertion Sort', (stopTime - startTime).toFixed(4), _path);
+
+        res.status(200).render('./sorting/sort', {
+            pageTitle: 'Insertion Sort',
+            length: arr.length,
+            time: time,
+            output: Array.from(output),
+            input: arr,
+            path: '/insertionSort'
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}

@@ -8,4 +8,6 @@ router.get('/defaultSort', controller.defaultSort);
 
 router.get('/selectionSort', controller.selectionSort);
 
+router.get('/insertionSort', controller.insertionSort);
+
 module.exports = router;
