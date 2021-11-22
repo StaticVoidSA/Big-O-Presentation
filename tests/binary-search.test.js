@@ -68,7 +68,7 @@ test('Test First Index Of Binary Search - Success', () => {
 test('Test First Index Of Binary Search - Success', () => {
     var input = sort.selectionSort(createArray.create(1000, 1, 1000));
     var expected = input.indexOf(100);    
-    var output = BinarySearch(input, 1002);
+    var output = BinarySearch(input, 100);
     expect(expected).toBe(output);
 });
 
