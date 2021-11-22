@@ -13,7 +13,7 @@
                 </div>
                 <% if (path === '/sortBubble') { %>
                     <div class="col-6 code-block">
-                        <code style="white-space: pre;">bubbleSort = (arr, length) {
+                        <code style="white-space: pre;">function bubbleSort = (arr, length) {
     let temp;
 
     for (let i = 0; i < length - 1; i++) {
@@ -31,7 +31,7 @@
                 <% } %>
                 <% if (path === '/sortDefault') { %>
                     <div class="col-6 code-block">
-                        <code style="white-space: pre;">defaultSort = (arr) => {
+                        <code style="white-space: pre;">function defaultSort = (arr) => {
     arr.sort((a, b) => {
         if (a > b) return 1;
         if (a === b) return 0;
@@ -39,8 +39,29 @@
     });
     return arr;
 }</code>
-                    </div>
+                    </div>    
                 <% } %>
+                <% if (path === '/selectionSort') { %>
+                    <div class="col-6 code-block">
+                        <code style="white-space: pre;">function selectionSort = (arr) => {
+    let noSwap = 0;
+    for (let i = 0; i < arr.length; i++) {
+        noSwap++;
+        let min = i;
+        for (let j = i + 1; J < arr.length; j++) {
+            if (arr[j] < arr[min]) {
+                min = j;
+                noSwap--;
+            }
+        }
+
+        if (noSwap > 1) break;
+        let temp = arr[i];
+        arr[i] = arr[min];
+        arr[min] = temp;
+    }
+    return arr;
+                <% } %>    
             </div>
             <!-- <div class="row">
                 <div class="col-1"></div>
